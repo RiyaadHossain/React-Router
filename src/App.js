@@ -1,18 +1,25 @@
-import { Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import About from "./Components/About/About";
+import Friend from "./Components/Friend/Friend";
+import Friends from "./Components/Friends/Friends";
 import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
     <div className="App">
       <h1>Hello, React Router.</h1>
       <h3>Play with It</h3>
-      <nav>
-        <Link to={"/"}>Home </Link>
-        <Link to={"/about"}>About </Link>
-        <Link to={"/friends"}>Friend</Link>
-      </nav>
       <Header />
+      <Routes>
+        <Route path="/" element={<Home/> }/>
+        <Route path="/about" element={<About />}/>
+        <Route path="/friends" element={<Friends />} />
+        <Route path="/friends/:friendId" element={<Friend/>}/>
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
     </div>
   );
 }
