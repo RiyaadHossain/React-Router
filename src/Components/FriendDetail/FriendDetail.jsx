@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 
 const FriendDetail = () => {
   const [user, setUser] = useState([]);
+  const { friendId } = useParams();
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${friendId}`)
       .then((res) => res.json())
       .then((data) => setUser(data));
-  }, []);
-  const { friendId } = useParams();
+  }, [friendId]);
   return (
     <div>
       <h3>Hello, I am your Friend - {user.name}</h3>
