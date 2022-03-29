@@ -1,11 +1,19 @@
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Friend = () => {
-    return (
-        <div>
-            <h3>I am Your Friend</h3>
-        </div>
-    );
+const Friend = ({ friend }) => {
+
+    const navigate = useNavigate()
+    const seeDetails = () => {
+      navigate(`/friends/${friend.id}`)
+  };
+  return (
+    <div>
+      <h3>
+        {friend?.name} <button onClick={seeDetails}>id</button>
+      </h3>
+    </div>
+  );
 };
 
 export default Friend;

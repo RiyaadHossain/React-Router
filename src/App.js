@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import About from "./Components/About/About";
-import Friend from "./Components/Friend/Friend";
+import FriendDetail from "./Components/FriendDetail/FriendDetail";
 import Friends from "./Components/Friends/Friends";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<Home/> }/>
         <Route path="/about" element={<About />}/>
         <Route path="/friends" element={<Friends />} />
-        <Route path="/friends/:friendId" element={<Friend/>}/>
+        <Route path="/friends/:friendId" element={<FriendDetail/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
